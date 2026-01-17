@@ -1,9 +1,12 @@
 package com.example.cosmos.service;
 
+import com.example.cosmos.controller.PasswordResetController;
 import com.example.cosmos.dto.LoginRequestDto;
 import com.example.cosmos.dto.RegistrationDto;
 import com.example.cosmos.repository.UserRepository;
 import com.example.cosmos.security.JwtUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +19,9 @@ import java.util.Map;
 
 @Service
 public class AuthService {
+
+    private static final Logger log =
+            LoggerFactory.getLogger(PasswordResetController.class);
 
     @Autowired
     private UserRepository userRepository;
